@@ -5,7 +5,8 @@
   "type": "module",
   "main": "app.mjs",
   "scripts": {
-    "start": "node app.mjs"
+    "start": "node app.mjs",
+    "sensor": "node sensor-test.mjs"
   },
   "keywords": [],
   "author": "Sören Balke",
