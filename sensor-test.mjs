@@ -16,8 +16,6 @@ async function exec() {
   }
 }
 
-export function sensor() {
-  setInterval(function () {
-    exec();
-  }, 1000);
-}
+setInterval(function () {
+  exec();
+}, 1000);
