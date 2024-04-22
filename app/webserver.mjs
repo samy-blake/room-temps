@@ -1,9 +1,15 @@
 import express, { json } from "express";
+import { join } from "path";
 import { DB } from "./db.mjs";
 
 export function webserver() {
   const app = express();
   app.use(json());
+  app.use(express.static("public"));
+  app.use(
+    "/chart.js",
+    express.static(join(import.meta.dirname, "../node_modules/chart.js"))
+  );
 
   const PORT = process.env.PORT || 3000;
 

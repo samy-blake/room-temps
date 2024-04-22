@@ -12,6 +12,7 @@
   "author": "Sören Balke",
   "license": "MIT",
   "dependencies": {
+    "chart.js": "^4.4.2",
     "express": "^4.19.2",
     "level": "^8.0.1",
     "node-dht-sensor": "^0.4.3"
