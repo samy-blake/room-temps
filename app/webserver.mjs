@@ -5,7 +5,7 @@ export function webserver() {
   const app = express();
   app.use(json());
 
-  const PORT = process.env.PORT || 80;
+  const PORT = process.env.PORT || 3000;
 
   app.get("/day", async (req, res) => {
     const date = new Date(Date.now());
