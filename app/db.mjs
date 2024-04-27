@@ -16,6 +16,14 @@ export const DB = {
   getOne: async (date) => {
     return await db.get(date);
   },
+  getLast: async () => {
+    const lastKey = (await db.keys({ limit: 1, reverse: true }).all()).reduce(
+      (v) => v
+    );
+    const data = await DB.getOne(Number.parseInt(lastKey));
+    data.time = lastKey;
+    return data;
+  },
   getMultiple: async (minDate = false, maxDate = false) => {
     const data = [];
     const opts = {};

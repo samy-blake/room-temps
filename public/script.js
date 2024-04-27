@@ -16,6 +16,13 @@ function getFormatTitleTime(list) {
     .padStart(2, "0")}.${lastDate.getFullYear()}`;
 }
 
+async function SetActiveData() {
+  const response = await fetch("/active");
+  const apiData = await response.json();
+
+  document.querySelector("[data-active-temp]").innerHTML = apiData.temperature;
+}
+
 async function DayChart() {
   const dayTempChart = new Chart(document.getElementById("dayTemp"), {
     type: "line",
@@ -175,6 +182,7 @@ async function YearChart() {
   yearTempChart.update();
 }
 
+SetActiveData();
 DayChart();
 MonthChart();
 YearChart();

@@ -13,6 +13,11 @@ export function webserver() {
 
   const PORT = process.env.PORT || 3000;
 
+  app.get("/active", async (req, res) => {
+    const data = await DB.getLast();
+    res.json(data);
+  });
+
   app.get("/day", async (req, res) => {
     const date = new Date(Date.now());
     date.setDate(date.getDate() - 1);
@@ -33,8 +38,6 @@ export function webserver() {
     const data = await DB.getMultiple(date.getTime());
     res.json(data);
   });
-
-  // TODO: add admin page
 
   app.listen(PORT, () => console.log(`App listening at port ${PORT}`));
 }
