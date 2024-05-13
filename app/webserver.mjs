@@ -1,9 +1,11 @@
 import express, { json } from "express";
 import { join } from "path";
 import { DB } from "./db.mjs";
+import cors from "cors";
 
 export function webserver() {
   const app = express();
+  app.use(cors());
   app.use(json());
   app.use(express.static("public"));
   app.use(
