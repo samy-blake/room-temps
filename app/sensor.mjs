@@ -13,7 +13,7 @@ async function exec() {
       temperature: res.temperature.toFixed(1),
       humidity: res.humidity.toFixed(1),
     });
-    console.log("add sensor data");
+    console.log(new Date(), "add sensor data");
   } catch (err) {
     console.error("Failed to read sensor data:", err);
   }

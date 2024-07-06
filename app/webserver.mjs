@@ -41,5 +41,7 @@ export function webserver() {
     res.json(data);
   });
 
-  app.listen(PORT, () => console.log(`App listening at port ${PORT}`));
+  app.listen(PORT, () =>
+    console.log(new Date(), `App listening at port ${PORT}`)
+  );
 }
